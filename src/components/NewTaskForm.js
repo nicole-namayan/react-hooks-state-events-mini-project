@@ -10,7 +10,9 @@ function NewTaskForm() {
       <label>
         Category
         <select name="category">
-          {/* render <option> elements for each category here */}
+          {CATEGORIES.filter(cat => cat !== "All").map(cat => (
+            <option key={cat} value={cat}>{cat}</option>
+          ))}
         </select>
       </label>
       <input type="submit" value="Add task" />
